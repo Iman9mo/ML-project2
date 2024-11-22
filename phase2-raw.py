@@ -58,4 +58,4 @@ X_reduced = (PCA(n_components=n_component)).fit_transform(centered_images)
 print(X_reduced.shape)
 X_reduced_df = pd.DataFrame(X_reduced)
 X_reduced_df['label'] = labels
-X_reduced_df.to_csv('raw_reduced.csv')
+X_reduced_df.to_csv('raw_reduced.csv', index=False)
