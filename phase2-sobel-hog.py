@@ -14,25 +14,6 @@ labels = mnist_data.iloc[:, -1].values    # Last column (labels)
 mean_image = np.mean(images, axis=0)
 centered_images = images - mean_image  # Centering the images
 
-# Step 3: Visualize some of the centered images
-# def visualize_images(images, num_images=5):
-#     plt.figure(figsize=(10, 5))
-#     for i in range(num_images):
-#         plt.subplot(1, num_images, i + 1)
-#         plt.imshow(images[i].reshape(28, 28), cmap='gray')
-#         plt.axis('off')
-#     plt.show()
-#
-# # Visualize the mean image
-# plt.figure(figsize=(5, 5))
-# plt.imshow(mean_image.reshape(28, 28), cmap='gray')
-# plt.title('Mean Image')
-# plt.axis('off')
-# plt.show()
-#
-# # Visualize some centered images
-# visualize_images(centered_images, num_images=5)
-
 # Step 4: Apply PCA to the centered images
 pca = PCA()
 pca.fit(centered_images)
