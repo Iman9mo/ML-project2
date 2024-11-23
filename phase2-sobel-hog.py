@@ -42,19 +42,19 @@ explained_variance_ratio = pca.explained_variance_ratio_
 
 # Calculate cumulative variance
 cumulative_variance = np.cumsum(explained_variance_ratio) * 100
-n_component = np.argmax(cumulative_variance >= 90) + 1
+n_component = np.argmax(cumulative_variance >= 60) + 1
 print(n_component)
 # Plotting
 plt.ylabel('% Variance Explained')
 plt.xlabel('# of Features')
 plt.title('PCA Variance Explained')
 plt.ylim(0, 110)
-plt.axhline(y=90, color='r', linestyle='--')
+plt.axhline(y=60, color='r', linestyle='--')
 plt.plot(cumulative_variance)
 plt.show()
 
 
-X_reduced = (PCA(n_components=n_component)).fit_transform(centered_images)
+X_reduced = (PCA(n_components=40)).fit_transform(centered_images)
 print(X_reduced.shape)
 X_reduced_df = pd.DataFrame(X_reduced)
 
